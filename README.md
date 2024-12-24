@@ -27,3 +27,7 @@ I would like to acknowledge the following sources for their invaluable tutorials
 
 - [oniani/ai](https://github.com/oniani/ai/tree/main)
 - [StatQuest with Josh Starmer](https://www.youtube.com/@statquest)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
