@@ -1,4 +1,4 @@
-# scratch
+# From Scratch
 
 This repository contains my implementation of different elements in AI using PyTorch from scratch (as much as possible).
 
@@ -20,3 +20,10 @@ PyTorch provides several activation functions that you can use in your neural ne
 - **Swish**: `torch.nn.SiLU` (also known as Sigmoid Linear Unit)
 
 You can find more activation functions and their details in the [PyTorch documentation](https://pytorch.org/docs/stable/nn.html#non-linear-activations-weighted-sum-nonlinearity).
+
+## Tribute
+
+I would like to acknowledge the following sources for their invaluable tutorials and lessons that have greatly contributed to my understanding and implementation of AI:
+
+- [oniani/ai](https://github.com/oniani/ai/tree/main)
+- [StatQuest with Josh Starmer](https://www.youtube.com/@statquest)
