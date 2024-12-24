@@ -2,6 +2,8 @@
 
 This repository contains my implementation of different elements in AI using PyTorch from scratch (as much as possible).
 
+> Currently working on activation functions and machine learning models
+
 ## Activation Functions
 
 PyTorch provides several activation functions that you can use in your neural network implementations. Here are some of the commonly used ones:
