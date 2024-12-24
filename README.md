@@ -4,6 +4,16 @@ This repository contains my implementation of different elements in AI using PyT
 
 > Currently working on activation functions and machine learning models
 
+## Project Structure
+
+| Type | Implementation | Description | Status |
+|------|---------------|-------------|---------|
+| Activation Functions | [`ReLU`](activation/relu/relu.py) | ReLU activation function implementation | ✅ |
+| Activation Functions | [`Sigmoid`](activation/sigmoid/sigmoid.py) | Sigmoid activation function implementation | ✅ |
+| Models | [`ML/GaussianNaiveBayes.py`](ML/GaussianNaiveBayes.py) | Gaussian Naive Bayes model implementation | ✅ |
+| Models | [`ML/linear.py`](ML/linear.py) | Logistic regression model implementation | ⏳ |
+
+
 ## Activation Functions
 
 PyTorch provides several activation functions that you can use in your neural network implementations. Here are some of the commonly used ones:
