@@ -44,25 +44,3 @@ class GaussianNaiveBayes:
             predictions[i] = self.unique_labels[np.argmax(posteriors)]
 
         return predictions
-
-if __name__ == "__main__":
-    from sklearn.datasets import load_iris
-    from sklearn.metrics import accuracy_score, precision_recall_fscore_support
-    from sklearn.model_selection import train_test_split
-
-    features, labels = load_iris(return_X_y=True)
-    train_features, test_features, train_labels, test_labels = train_test_split(features, labels, test_size=0.5, random_state=0)
-
-    gnb = GaussianNaiveBayes()
-    gnb.fit(train_features, train_labels)
-    predictions = gnb.predict(test_features)
-
-    accuracy = accuracy_score(test_labels, predictions)
-    precision, recall, fscore, _ = precision_recall_fscore_support(test_labels, predictions, average="macro")
-
-    print(f"Accuracy: {accuracy}")
-    print(f"Precision: {precision}")
-    print(f"Recall: {recall}")
-    print(f"F1 Score: {fscore}")
-    print()
-    print(f"Mislabeled points: {(predictions != test_labels).sum()}/{test_features.shape[0]}")
