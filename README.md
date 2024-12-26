@@ -12,7 +12,7 @@ This repository contains my implementation of different elements in AI using PyT
 | Activation Functions | [`Sigmoid`](activation/sigmoid/sigmoid.py) | Sigmoid activation function implementation | ✅ |
 | Models | [`ML/GaussianNaiveBayes.py`](ML/GaussianNaiveBayes.py) | Gaussian Naive Bayes model implementation | ✅ |
 | Models | [`ML/KNearestNeighbors.py`](ML/KNearestNeighbors.py) | KKN model implementation | ✅ |
-| Models | [`ML/linear.py`](ML/linear.py) | Logistic regression model implementation | ⏳ |
+| Models | [`ML/LinearRegression.py`](ML/LinearRegression.py) | Logistic regression model implementation | ⏳ |
 
 
 ## Activation Functions
