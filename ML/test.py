@@ -1,6 +1,6 @@
 import argparse
 import numpy as np
-from sklearn.datasets import load_iris
+from sklearn.datasets import load_iris, load_breast_cancer
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, mean_squared_error
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from GaussianNaiveBayes import GaussianNaiveBayes
 from KNearestNeighbors import KNearestNeighbors
 from LinearRegression import LinearRegression
+from LogisticsRegression import LogisticsRegression
 
 
 def test_gaussian_naive_bayes():
@@ -97,13 +98,38 @@ def test_lr():
     print(f"Recall: {recall}")
     print(f"F1 Score: {fscore}")
 
+def test_llr():
+    plt.style.use('bmh')
+
+    data = load_breast_cancer()
+
+    train_features, test_features, train_labels, test_labels = train_test_split(
+        data.data, data.target, test_size=0.33, random_state=0
+    )
+
+    model = LogisticsRegression(epoches=256, learning_rate=2e-5, threshold=0.5, logging=False)
+    model.fit(train_features, train_labels)
+    predictions = model.predict(test_features)
+
+    accuracy = accuracy_score(test_labels, predictions)
+    precision, recall, fscore, _ = precision_recall_fscore_support(test_labels, predictions, average="macro")
+
+    print("LogisticsRegression Test Results:")
+    print(f"Accuracy: {accuracy}")
+    print(f"Precision: {precision}")
+    print(f"Recall: {recall}")
+    print(f"F1 Score: {fscore}")
+    print(f"Mislabeled points: {(predictions != test_labels).sum()}/{test_features.shape[0]}")
+    
+
+
 
     
 
 def main():
     parser = argparse.ArgumentParser(description='Test different ML models')
     parser.add_argument('--name', type=str, required=True, 
-                      choices=['gnb', 'knn', 'lr'],
+                      choices=['gnb', 'knn', 'lr', 'llr'],
                       help='Name of the model to test (gnb: GaussianNaiveBayes, knn: KNearestNeighbor)')
     
     args = parser.parse_args()
@@ -115,6 +141,8 @@ def main():
             test_knn()
         elif args.name == 'lr':
             test_lr()
+        elif args.name == 'llr':
+            test_llr()
         else:
             print(f"Model {args.name} not implemented yet")
     except Exception as e:
